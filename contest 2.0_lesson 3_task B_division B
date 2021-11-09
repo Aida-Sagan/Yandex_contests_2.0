@@ -1,0 +1,44 @@
+#include <iostream>
+#include <set>
+
+using std::endl;
+using std::cin;
+using std::cout;
+using std::set;
+using std::multiset;
+
+/*
+Во входной строке записана последовательность чисел через пробел. 
+Для каждого числа выведите слово YES 
+(в отдельной строке), если это число ранее встречалось в последовательности или NO, если не встречалось.
+
+Формат ввода
+
+Вводится список чисел. Все числа списка находятся на одной строке. 
+
+пример:
+1 2 3 2 3 4
+
+вывод:
+NO
+NO
+NO
+YES
+YES
+NO
+*/
+int main() {
+	multiset <int> seq;
+	int x;
+	while (cin >> x) {
+		if (seq.count(x) == 0) {
+			cout << "NO" << endl;
+			seq.insert(x);
+		}
+		else {
+			cout << "YES" << endl;
+		}
+	}
+
+	return 0;
+}
